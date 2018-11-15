@@ -3,7 +3,7 @@ var grid = document.getElementById("table");
     grid.onclick = function(e) {
       if (e.target.tagName != 'TH') return;
 
-      // Если TH -- сортируем
+      
       if (e.target.getAttribute('data-status') == "null") {
         e.target.setAttribute("data-status", "up")
       } else if (e.target.getAttribute('data-status') == "up") {
@@ -18,10 +18,10 @@ var grid = document.getElementById("table");
     function sortGrid(colNum, type, sortStatus) {
       var tbody = grid.getElementsByTagName('tbody')[0];
 
-      // Составить массив из TR
+      
       var rowsArray = [].slice.call(tbody.rows);
 
-      // определить функцию сравнения, в зависимости от типа
+      
       var compare;
 
       switch (type) {
